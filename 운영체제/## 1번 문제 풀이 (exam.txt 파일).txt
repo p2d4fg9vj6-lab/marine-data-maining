@@ -1,0 +1,37 @@
+## 1번 문제 풀이 (exam.txt 파일)
+
+### (1) exam.txt 파일이 적혀진 디스크 블록들을 순서대로 나열하라.
+
+$53 \rightarrow 2 \rightarrow 124 \rightarrow 54 \rightarrow 320$
+
+### (2) 블록 크기가 1KB라면 exam.txt 파일의 크기로 가장 적절한 것은?
+
+② 5KB
+
+---
+
+## 2번 문제 풀이 (score.txt 파일)
+
+### (1) score.txt 파일이 적혀진 디스크 블록들을 순서대로 나열하라.
+
+$55 \rightarrow 321 \rightarrow 52 \rightarrow 123$
+
+### (2) 블록 크기가 2KB일 때 score.txt 파일의 크기로 가장 적절한 것은?
+
+② 7KB
+
+---
+
+## 3번 문제 풀이 (유닉스 파일 시스템)
+
+### (1) 이 파일을 읽기 위해 운영체제는 몇 개의 i-node를 읽어야 하는가? 읽어야 하는 i-node를 순서대로 나열하라.
+
+4개 / / (루트) $\rightarrow$ /usr $\rightarrow$ /usr/dev $\rightarrow$ /usr/dev/source
+
+### (2) i-node와 디스크 블록들이 읽혀지는 순서를 기술하라.
+
+루트(/)의 i-node $\rightarrow$ 루트(/)의 디스크 블록 $\rightarrow$ usr의 i-node $\rightarrow$ usr의 디스크 블록 $\rightarrow$ dev의 i-node $\rightarrow$ dev의 디스크 블록 $\rightarrow$ source의 i-node $\rightarrow$ source의 디스크 블록 $\rightarrow$ app.c의 i-node $\rightarrow$ app.c의 디스크 블록(실제 데이터)
+
+### (3) 이 과정이 읽혀지는 과정을 생각해볼 때, 운영체제가 i-node 테이블을 메모리에 적재해 두고 사용하는 이유는 무엇인지 설명하라.
+
+파일을 찾거나 읽을 때마다 매번 속도가 느린 디스크(HDD/SSD)에 직접 접근하여 i-node를 읽어오면 시스템의 전체적인 실행 속도가 심각하게 저하되기 때문이다. 따라서 자주 쓰는 i-node 정보를 속도가 빠른 메모리(RAM)에 미리 올려두고(캐싱) 접근하여 탐색 속도를 향상시키기 위함이다.
